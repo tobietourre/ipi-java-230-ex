@@ -3,11 +3,16 @@ package com.ipiecoles.java.java230.model;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "Employe")
 public abstract class Employe {
-
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id ;
 
 	private String nom;
 	
